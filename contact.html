@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>ページのタイトル|店名</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		 <link rel="icon" type="images/ico04.gif" href="images/ico04.gif">
+		<!-- リセット -->
+		<link rel="stylesheet" href="css/reset.css">
+		<!-- 共通のスタイル -->
+		<link rel="stylesheet" href="css/common.css">
+		<!-- ページのスタイル -->
+		<link rel="stylesheet" href="css/contact.css">
+		<link href="https://fonts.googleapis.com/css?family=Caveat rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<button type="button" class="btn js-btn">
+				<span class="btn-line"></span>
+			 </button>
+			<nav>
+				<ul class="menu">
+					<li class="menu-list"><a href="index.html">HOMEトップ</a></li>
+					<li class="menu-list"><a href="#">ABOUTトップ</a></li>
+					<li class="menu-list"><a href="school.html">SCHOOL</a></li>
+					<li class="menu-list"><a href="#">PRODUCT取扱商品</a></li>
+					<li class="menu-list"><a href="#">SEAZON旬の花</a></li>
+					<li class="menu-list"><a href="contact.html">CONTACTお問い合わせ</a></li>
+				</ul>
+			 </nav>
+		</header>
+	<main>
+		<h1>お問い合わせフォーム</h1>
+	<form method="post" action="input.php">
+				<table border="1">
+					<tr>
+						<th>名前<span class="req">必須</span></th>
+						<td>姓&nbsp;<input type="text" name="sei" value="">&nbsp;&nbsp;
+								名&nbsp;<input type="text" name="mei" value="">&nbsp;<全角文字></td>
+					</tr>
+					
+					<tr>
+						<th>性別<span class="req">必須</span></th>
+						<td><input type="radio" name="seibetsu" value="M">男性
+								<input type="radio" name="seibetsu" value="F">女性</td>
+					</tr>
+					
+					<tr>
+						<th>年代<span class="req">必須</span></th>
+						<td>
+							<select name="nendai">
+								<option value="" selected>選択して下さい</option>
+								<option value="1">10～19歳</option>
+								<option value="2">20～29歳</option>
+								<option value="3">30～39歳</option>
+								<option value="4">40～49歳</option>
+								<option value="5">50～59歳</option>
+								<option value="6">60歳以上</option>
+							</select></td>
+					</tr>
+					
+					<tr>
+						<th>お問い合わせ内容<span class="req" >必須</span></th>
+						<td><textarea name="iken"></textarea></td>
+					</tr>
+				</table>
+				<div class="btnbox">
+					<input type="submit" value="入力内容を確認する >">
+				</div>
+			</form>
+
+	</main>
+	<footer>
+	<ul class="footer-nav">
+		<li><a href="index.html">HOMEトップ</a></li>
+		<li><a href="about.html">ABOUTトップ</a></li>
+		<li><a href="school.html">SCHOOL</a></li>
+		<li><a href="shop.html">SHOPトップ</a></li>
+		<li><a href="contact.html">CONTACTトップ</a></li>
+		<li><a href="policy.html">個人情報保護方針</a></li>
+		<li><a href="tokutei.html">特定商取引に基づく表記</a></li>
+	</ul>
+		<p class="copyright"><small>(c)2021.TAICHISHIMIZU</small></p>
+	</footer>
+	<script src="js/jquery-min.js"></script>
+	<script src="js/main.js"></script>
+	</body>
+</html>

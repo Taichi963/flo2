@@ -1,0 +1,316 @@
+
+body{
+font-family: cursive;
+background-color:#FFF5EE;
+}
+
+/* header start */
+header {
+	background-color: #000000;
+}
+
+.menu {
+	width: 70%;
+	height: 100vh;
+	margin-left: auto;
+	/* メニューを縦に */
+	display: flex;
+	flex-direction: column;
+	transition: .3s;
+  }
+
+  .menu-list {
+	width: 100%;
+	height: 100%;
+	/* メニューテキスト位置をリスト内中心に */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition-property: background-color;
+    transition-duration:0.6s;
+	line-height: 100px;
+  }
+
+  .menu-list a {
+	text-decoration: none;
+	color: #fff;
+	width: 100%;
+	padding-left: 30%;
+  }
+
+  .menu-list a:hover {
+	background-color: white;
+    color: #000000;
+  }
+
+  .menu {
+	/* メニューの位置マイナス指定で画面外に */
+	z-index: 100;
+	position: fixed;
+	right: -70%;
+	width: 20%;
+	height: 100vh;
+	/* メニューを縦に */
+	display: flex;
+	flex-direction: column;
+	color: #efefef;
+	background-color: #000;
+	transition: .3s;
+  }
+  
+  .btn {
+	/* ボタンの配置位置  */
+	position: fixed;
+	top: 32px;
+	right: 16px;
+	/* ボタンの大きさ  */
+	width: 48px;
+	height: 48px;
+	/* 最前面に */
+	z-index: 101;
+	background-color: #000; /* わかりやすいように */
+  }
+
+  .btn-line {
+	display: block;
+	position: relative;  /* バーガー線の位置基準として設定 */
+	width: 100%;  /* 線の長さと高さ */
+	height: 4px;
+	background-color: #d6d5d5;  /* バーガー線の色 */
+	transition: .2s;
+}
+
+/****** 上下のバーガー線 *****/
+.btn-line::before,
+.btn-line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  transition: .5s;
+}
+
+
+.btn-line::before {
+  /* 上の線の位置 */
+  transform: translateY(-16px);
+}
+
+
+.btn-line::after {
+  /* 下の線の位置 */
+  transform: translateY(16px);
+}
+
+.menu.open {
+	right: 0;
+  }
+
+  /***** メニューオープン時 *****/
+.btn-line.open {
+	background-color: transparent;  	/* 真ん中の線を透明に */
+}
+
+.btn-line.open::before , 
+.btn-line.open::after {
+	content: "";
+	background-color: #fff;  /* 上下の線の色を変える */
+	transition: .2s;
+}
+
+.btn-line.open::before {
+	transform: rotate(45deg);  /* 上の線を傾ける */
+}
+
+.btn-line.open::after {
+	transform: rotate(-45deg);  /* 下の線を傾ける */
+}
+  
+
+
+#top-text{
+	position:absolute;
+	top: 30%;
+  left: 20%;
+	color:black;
+	font-weight: bold;
+	font-size: 3vw;
+	font-family: 'Caveat', cursive;
+	letter-spacing:1em;
+	opacity:0.8;
+} 
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+    margin:0 auto;
+}
+
+.slider img {
+    width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+    height:auto;
+	border-radius: 5%;
+	object-fit: cover;
+	height: 500px;
+	padding-top: 40px;
+}
+
+.slider .slick-slide {
+	transform: scale(0.8);/*左右の画像のサイズを80%に*/
+	transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+	opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+	transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+	opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align:center;
+	margin:20px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+	margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+.news {
+	padding: 30px 0 0 10%;
+}
+
+.news ol{
+ 	margin-left: 0;
+}
+
+h2:nth-child(2){
+	text-align: center;
+	padding: 0 auto;
+	color: red;
+}
+
+/*main*/
+main{
+	width:100%;
+}
+.clearfix::after{
+	content: "";
+	display: block;
+	clear : both;
+}
+	main ol{
+	margin-left: 40px;
+	margin-left: 40xp;
+	list-style: none;
+}
+
+ol{
+	margin: 20px;
+	border: #000000 solid 1px;
+	background-color: #f5ffff;
+	width: 250px;
+	height: 120px;
+	overflow-y:scroll;
+}
+
+li{
+	list-style: none;
+}
+
+.child{
+	margin-top:150px;
+	border-top:1px solid #000000;
+	padding-top:20px;
+	padding-bottom:50px;
+	font-size: 30px;
+}
+
+.card {
+margin-bottom: 80px;
+
+}
+
+.rank{
+	width:100%;
+	padding-top:100px;
+	padding-left:300px;
+}
+
+.rank img{
+height:200px;
+width:200px;
+}
+
+.rank h4{
+	font-size:30px;
+	color: red;
+}
+
+
+
+/* footer */
+footer{
+	background-color: #dcdcdc;
+	width:100%;
+}
+
+
+.footer-nav li {
+	display:inline;
+	opacity:0.5;
+	padding-left:50px;
+}
+
+.footer-nav li:hover {
+	opacity:1;
+}
+.copyright{
+	text-align : center;
+}
+
